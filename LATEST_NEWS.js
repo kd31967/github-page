@@ -53,7 +53,7 @@ function maker(json) {
     const keys1 = Object.keys(json);
         for (var i = 0; i < keys1.length; i++) {
             const counter = json[i];
-            console.log(i + ' - ' + counter.latest_news + ' '+ counter.date + ' '+counter.description);
+            console.log(i + ' - ' + counter.latest_news + ' '+ counter.date + ' '+counter.description + '' + counter.notification_url);
         }
 
     //const div = document.createElement('div');
@@ -62,7 +62,7 @@ function maker(json) {
     Object.keys(json).forEach(function(k){
         console.log(k + ' - ' + json[k]);
          newObject=json[k]
-         console.log(i + ' - ' + newObject.latest_news + ' '+ newObject.date + ' '+newObject.description);
+         console.log(i + ' - ' + newObject.latest_news + ' '+ newObject.date + ' '+newObject.description+ ' '+ newObject.notification_url);
         //  const ele = document.createElement('div');
         // ele.style = 'margin-bottom:35px;1px solid #ddd';
         // ele.setAttribute("class","col-lg-4");
@@ -92,7 +92,7 @@ function maker(json) {
         hypLink.style="text-align:center;"
         // Set the href property.
         //hypLink.setAttribute("class","btn btn-info");
-        hypLink.href = "#"
+        hypLink.href = newObject.notification_url
         h4.append(hypLink)
 		h4.append(closeSpan)
 		
