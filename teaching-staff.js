@@ -13,7 +13,7 @@ function init() {
     fetch(url)
         .then(res => res.text())
         .then(rep => {
-            //console.log(rep);
+            console.log(rep);
             const jsData = JSON.parse(rep.substr(47).slice(0, -2));
             console.log(jsData);
             const colz = [];
