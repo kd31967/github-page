@@ -4,6 +4,31 @@ const output = document.querySelector('.output');
 
 
  
+function sData(e) {
+  e.preventDefault();
+  repMessage.textContent = "Sending";
+  let val1 = iName.value || 'unknown';
+  let val2 = iMes.value || 'Message';
+  iName.style.display = 'none';
+  iMes.style.display = 'none';
+  btnSave.style.display = 'none';
+  let arr = [val1, val2];
+  let formData = new FormData();
+  formData.append('data', JSON.stringify(arr));
+  fetch(url, {
+    method: 'POST'
+    , body: formData
+  }).then(function (rep) {
+    return rep.json()
+  }).then(function (data) {
+    console.log(data);
+    btnSave.style.display = 'inline';
+    iName.style.display = 'inline';
+    iMes.style.display = 'inline';
+    repMessage.textContent = "Submitted id:" + data.id;
+    getData();
+  })
+}
  
 function getData() {
   output.innerHTML = "loading...";
