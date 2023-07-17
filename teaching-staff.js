@@ -1,4 +1,4 @@
-const url = 'https://script.google.com/macros/s/AKfycbyXNnkk4NxcRhV_T7GRowjP2eJF4ZXA8_fPSMdcgOd-jm0ALhAunHrNy2_ZOlXbxU2tAA/exec?load=myTeacherStaffData';
+const url = 'https://script.google.com/macros/s/AKfycbxDQ9AFKPsDhSXVSbM7-hHqZh1JZpurYG9uVVvJlrgwtXDPppT0h4dBRexG35iWAFNDmw/exec?load=myTeacherStaffData';
 window.addEventListener('DOMContentLoaded', getData);
 const output = document.querySelector('.output');
 

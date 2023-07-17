@@ -1,4 +1,4 @@
-const url = 'https://script.google.com/macros/s/AKfycbyXNnkk4NxcRhV_T7GRowjP2eJF4ZXA8_fPSMdcgOd-jm0ALhAunHrNy2_ZOlXbxU2tAA/exec?load=myLatestEvent';
+const url = 'https://script.google.com/macros/s/AKfycbxDQ9AFKPsDhSXVSbM7-hHqZh1JZpurYG9uVVvJlrgwtXDPppT0h4dBRexG35iWAFNDmw/exec?load=myLatestNews';
 window.addEventListener('DOMContentLoaded', getData);
 const output = document.querySelector('.output');
  
@@ -14,13 +14,13 @@ function getData() {
  var h4 = document.createElement('h4'); 
         var hypLink = document.createElement('a'); 
         var closeSpan = document.createElement("span");
-        var link = document.createTextNode(val[1]);
+        var link = document.createTextNode(val[0]);
         hypLink.appendChild(link);
         hypLink.title = newObject.latest_news; 
         hypLink.style="text-align:center;"
         // Set the href property.
         //hypLink.setAttribute("class","btn btn-info");
-        hypLink.href = newObject.notification_url
+        hypLink.href = val[3]
         h4.append(hypLink)
 		h4.append(closeSpan)
 		
@@ -30,7 +30,7 @@ function getData() {
         
         var i = document.createElement("i");
         i.setAttribute("class","fa fa-calendar");
-        var i_content = document.createTextNode(newObject.date);
+        var i_content = document.createTextNode(val[1]);
         i.appendChild(i_content);
         span.append(i);
         const div_1 = document.createElement('div');
@@ -42,7 +42,7 @@ function getData() {
         const div_2 = document.createElement('div');
         div_2.style = 'text-align:justify; margin-top:-10px;';
         div_2.setAttribute("class","meta");
-        var content = document.createTextNode(newObject.description);
+        var content = document.createTextNode(val[2]);
         div_2.appendChild(content);
 
         output.append(h4);
