@@ -2,7 +2,7 @@ const url = 'https://script.google.com/macros/s/AKfycbyncwm9bAgCQ_cThLbTrJ57xmVY
 window.addEventListener('DOMContentLoaded', getData);
 const output = document.querySelector('.output');
 
-btnReload.addEventListener('click', getData);
+
  
 function sData(e) {
   e.preventDefault();
@@ -50,7 +50,7 @@ function getData() {
 		let img_url=val[3]
 		var new_url = img_url.split("/view")[0];		
 		result = new_url.replace("file/d/", "uc?id=");
-		console.log("result is",result)
+		console.log("result is",result+'&export=view')
         img.setAttribute('src', result+'&export=view');
 		img.setAttribute("class","img-responsive");
 		img.style = 'width:100%; height:200px;';
@@ -58,13 +58,13 @@ function getData() {
 		let p = document.createElement('p');
     	p.setAttribute("align","center");
 		p.style = 'margin:0px; margin-top:10px; font-weight:bold;';
-		p.textContent = val[0];
+		p.textContent = val[1];
 		ele.append(p);
 		
 		let p1 = document.createElement('p');
     	p1.setAttribute("align","center");
 		p1.style = 'margin:0px; ';
-		p1.textContent = val[1];
+		p1.textContent = val[2];
 
 		
 		ele.append(p1);
