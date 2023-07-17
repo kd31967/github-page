@@ -1,64 +1,53 @@
-const sheetID = '1J3vu3UwacG-oSG7G1A6_vvlNx3trn3diGQ1j1Cg4I-Q';
-const base = `https:docs.google.com/spreadsheets/d/${sheetID}/gviz/tq?`;
-const sheetName = 'staff';
-let qu ='Select *'
-const query = encodeURIComponent(qu);
-const url = `${base}&sheet=${sheetName}&tq=${query}`;
-const data = [];
-document.addEventListener('DOMContentLoaded', init);
+const url = 'https://script.google.com/macros/s/AKfycbyncwm9bAgCQ_cThLbTrJ57xmVYlwcnAaYfHiIPRInW-Y2xLb9rNPEmbSRPfffN12nPvA/exec';
+window.addEventListener('DOMContentLoaded', getData);
+const output = document.querySelector('.output');
+
+btnReload.addEventListener('click', getData);
  
-const output = document.querySelector('.output'); 
-function init() {
-    console.log('ready');
-    fetch(url)
-        .then(res => res.text())
-        .then(rep => {
-            console.log(rep);
-            const jsData = JSON.parse(rep.substr(47).slice(0, -2));
-            console.log(jsData);
-            const colz = [];
-            jsData.table.cols.forEach((heading) => {
-                if (heading.label) {
-                    colz.push(heading.label.toLowerCase().replace(/\s/g, ''));
-                }
-            })
-            jsData.table.rows.forEach((main) => {
-                //console.log(main);
-                const row = {};
-                colz.forEach((ele, ind) => {
-                    //console.log(ele);
-                    row[ele] = (main.c[ind] != null) ? main.c[ind].v : '';
-                    console.log(row[ele])
-                    console.log("39")
-                    console.log(row)
-                    console.log("40")
-                })
-                data.push(row);
-                console.log(data)
-            })
-            maker(data);
-            console.log(data)
-        })
+function sData(e) {
+  e.preventDefault();
+  repMessage.textContent = "Sending";
+  let val1 = iName.value || 'unknown';
+  let val2 = iMes.value || 'Message';
+  iName.style.display = 'none';
+  iMes.style.display = 'none';
+  btnSave.style.display = 'none';
+  let arr = [val1, val2];
+  let formData = new FormData();
+  formData.append('data', JSON.stringify(arr));
+  fetch(url, {
+    method: 'POST'
+    , body: formData
+  }).then(function (rep) {
+    return rep.json()
+  }).then(function (data) {
+    console.log(data);
+    btnSave.style.display = 'inline';
+    iName.style.display = 'inline';
+    iMes.style.display = 'inline';
+    repMessage.textContent = "Submitted id:" + data.id;
+    getData();
+  })
 }
  
-function maker(json) {
-
-    const keys1 = Object.keys(json);
-        for (var i = 0; i < keys1.length; i++) {
-            const counter = json[i];
-            console.log(i + ' - ' + counter.date + ' '+ counter.name + ' '+counter.destination + ' '+  counter.pic);
-        }
-
-  
-    Object.keys(json).forEach(function(k){
-        console.log(k + ' - ' + json[k]);
-         newObject=json[k]
-         console.log("121" + ' - ' + newObject.date + ' '+newObject.name + ' '+newObject.destination + ' '+newObject.pic);
-         const ele = document.createElement('div');
-       
-        ele.setAttribute("class","col-lg-3");
+function getData() {
+  output.innerHTML = "loading...";
+  fetch(url).then(function (rep) {
+    return rep.json()
+  }).then(function (data) {
+    console.log(data);
+    output.innerHTML = "";
+    data.posts.forEach(function (val) {
+      console.log(val);
+      //let html = document.createElement('div');
+      //html.innerHTML = val[0] + ' ' + val[1] + ' ' + val[2] + '<br>';
+      //output.appendChild(html);
+	  
+	  const ele = document.createElement('div');
+	  
+	  ele.setAttribute("class","col-lg-3");
 		let img = document.createElement('img');
-		let img_url=newObject.pic
+		let img_url=val[3]
 		var new_url = img_url.split("/view")[0];		
 		result = new_url.replace("file/d/", "uc?id=");
 		console.log("result is",result)
@@ -69,22 +58,19 @@ function maker(json) {
 		let p = document.createElement('p');
     	p.setAttribute("align","center");
 		p.style = 'margin:0px; margin-top:10px; font-weight:bold;';
-		p.textContent = newObject.name;
+		p.textContent = val[0];
 		ele.append(p);
 		
 		let p1 = document.createElement('p');
     	p1.setAttribute("align","center");
 		p1.style = 'margin:0px; ';
-		p1.textContent = newObject.destination;
+		p1.textContent = val[1];
 
 		
 		ele.append(p1);
         output.append(ele);
-       
-    });
-   
-    
-        
-  
+	  
+	  
+    })
+  })
 }
- 
