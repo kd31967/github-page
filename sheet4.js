@@ -11,11 +11,11 @@ let qu ='Select *'
 const query = encodeURIComponent(qu);
 const url = `${base}&sheet=${sheetName}&tq=${query}`;
 const data = [];
-document.addEventListener('DOMContentLoaded', init);
+document.addEventListener('DOMContentLoaded', video_list);
  
 const output = document.querySelector('.output');
  
-function init() {
+function video_list() {
     console.log('ready');
     fetch(url)
         .then(res => res.text())
