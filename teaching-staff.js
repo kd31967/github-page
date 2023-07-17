@@ -68,6 +68,7 @@ function getData() {
 
 		
 		ele.append(p1);
+		sleep(10);
         output.append(ele);
 	  
 	  

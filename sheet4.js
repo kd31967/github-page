@@ -80,6 +80,7 @@ function maker(json) {
 		ifrm.style.allowfullscreen;
         ele.append(closeSpan)
         ele.append(ifrm);
+		sleep(10);
         output.append(ele);
        
     });

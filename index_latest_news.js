@@ -11,11 +11,11 @@ let qu ='Select *'
 const query_1 = encodeURIComponent(qu);
 const url_1 = `${base_1}&sheet=${sheetName_1}&tq=${query_1}`;
 const data_1 = [];
-document.addEventListener('DOMContentLoaded', init);
+document.addEventListener('DOMContentLoaded', init1);
  
 const output_1 = document.querySelector('.output1');
  
-function init() {
+function init1() {
     console.log('ready');
     fetch(url_1)
         .then(res => res.text())
