@@ -14,7 +14,7 @@ function addImages() {
     json.data.forEach(function (val) {
       console.log(val.url);
 	  let img = document.createElement('img');
-      img.setAttribute('src', val.url);
+      img.setAttribute('src', val.url+'&export=view');
 	  const ele = document.createElement('div');	  
       ele.setAttribute("class","item");
 	  if (first) {
