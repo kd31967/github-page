@@ -1,4 +1,4 @@
-const url = 'https://script.google.com/macros/s/AKfycbyncwm9bAgCQ_cThLbTrJ57xmVYlwcnAaYfHiIPRInW-Y2xLb9rNPEmbSRPfffN12nPvA/exec';
+const url = 'https://script.google.com/macros/s/AKfycbyXNnkk4NxcRhV_T7GRowjP2eJF4ZXA8_fPSMdcgOd-jm0ALhAunHrNy2_ZOlXbxU2tAA/exec?load=myTeacherStaffData';
 window.addEventListener('DOMContentLoaded', getData);
 const output = document.querySelector('.output');
 
@@ -68,7 +68,7 @@ function getData() {
 
 		
 		ele.append(p1);
-		sleep(10);
+		
         output.append(ele);
 	  
 	  
