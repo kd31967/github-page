@@ -16,7 +16,7 @@ function getData() {
         var closeSpan = document.createElement("span");
         var link = document.createTextNode(val[0]);
         hypLink.appendChild(link);
-        hypLink.title = newObject.latest_news; 
+        hypLink.title = val[0]; 
         hypLink.style="text-align:center;"
         // Set the href property.
         //hypLink.setAttribute("class","btn btn-info");
