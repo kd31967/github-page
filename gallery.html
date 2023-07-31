@@ -24,6 +24,67 @@
   </head>
   <body>
 <style>
+
+@import url('https://fonts.googleapis.com/css?family=poppins:200,300,400,500,600,700,800,900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins', sans-serif;
+}
+section{
+    padding: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 40px auto;
+}
+section ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+section ul li{
+    list-style: none;
+    background: #eee;
+    padding: 12px 20px;
+    margin: 5px;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+section ul li.active{
+    background: #058dc7;
+    color: #fff;
+}
+.product{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.product .itemBox{
+    position: relative;
+    width: 300px;
+    height: 300px;
+    margin: 5px;
+    display: block;
+}
+.product .itemBox.hide{
+    display: none;
+}
+.product .itemBox img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 .filtr-item {
     padding: 1rem;
 }
@@ -159,10 +220,10 @@
         	<div class="container">	
             	<div class="row">
                 	<div class="col-lg-12"><h1 style="padding-top:40px; padding-bottom:25px; color:#fff;">Photo Gallery</h1>
-					<ul class="breadcrumb" style="background:#0060B1; padding:0px;">
+					<!--<ul class="breadcrumb" style="background:#0060B1; padding:0px;">
 						<li><a href="index.html" style="color:#fff;">Home</a>
 						<li><a href="#" style="color:#fff;">Photo Gallery</a>
-					</ul>
+					</ul> -->
 					
 					</div>
                 </div>
@@ -170,19 +231,133 @@
         </section>
         
         
-		<div class="content_top clearfix">
-        
-        
-        
-        
-			<div class="container">
-				<div class="row">
-            
-                <div class="col-lg-12">
-							<h1>Photo Gallery</h1>
+
 							
 							
-							<ul class="simplefilter">
-                
-                <li class="active" data-filter="all">All</li>
-				no album
+	</div>				
+	<section id="Grid"  >
+				  <ul class="output">
+						<li class="list active" data-filter="all">All</li>
+						
+				 </ul>
+				 <div class="product output1">
+				 
+				 </div>
+				        
+                </section>
+    
+	
+	
+	
+	<!--  footer added on page -->
+	
+	<div class="menuFooter clearfix">
+            <div class="container">
+                <div class="row clearfix">
+
+                    <div class="col-sm-3 col-xs-6">
+                        <ul class="menuLink clearfix">
+                            <li><a href="about.html">About School</a></li>
+                            
+                            <li><a href="principal_message.html">Principal Message</a></li>
+                            <li><a href="chairman-message.html">Chairman Message</a></li>
+                            <li><a href="comittee_members.html">Committee Members</a></li>
+							<li><a href="teaching-staff.html">Teaching Staff</a></li>
+
+                        </ul>
+                    </div>
+                    <!-- col-sm-3 col-xs-6 -->
+
+                    <div class="col-sm-3 col-xs-6 borderLeft clearfix">
+                        <ul class="menuLink clearfix">
+                            <li><a href="latest_news.html">           
+Latest News
+</a></li>
+                            <li><a href="admission-procedure.html"> Admission </a></li>
+                            <li><a href="infrastructure.html">Infrastructure</a></li>
+                            <li><a href="tc-issued.html">TC Issued</a></li>
+                            <li><a href="latest-events.html">Latest Events</a></li>
+                        </ul>
+                    </div>
+                    <!-- col-sm-3 col-xs-6 -->
+
+                    <div class="col-sm-3 col-xs-6 borderLeft clearfix">
+                        <div class="footer-address">
+						<ul class="menuLink clearfix">
+                            <li><a href="downloads.html">           
+Downloads
+</a></li>
+                            <li><a href="latest-video.html"> Latest Video </a></li>
+                     
+                           
+                        </ul>
+                            <h5 style="color:#fff;">Address :</h5>
+                            <address style="color:#fff;">
+                 Abhanpur , Dist – Raipur   , State – Chhattisgarh , INDIA
+              </address>
+                           
+                        </div>
+                    </div>
+                    <!-- col-sm-3 col-xs-6 -->
+
+                    <div class="col-sm-3 col-xs-6 borderLeft clearfix">
+                        <div class="socialArea clearfix">
+                            <h5 style="color:#fff;">Find us on:</h5>
+                            <ul class="list-inline ">
+                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                                <!--<li><a href="#"><i class="fa fa-pinterest-p"></i></a></li>
+              <li><a href="#"><i class="fa fa-flickr"></i></a></li>--->
+                                <li><a href="#"><i class="fa fa-youtube-play"></i></a></li>
+                            </ul>
+                        </div>
+                        <!-- social -->
+                        <div class="contactNo clearfix">
+                            <h5 style="color:#fff;">Call us on:</h5>
+                            <h4 style="color:#fff;">+91-(9425514683)</h4>
+
+                        </div>
+                        <!-- contactNo -->
+                    </div>
+                    <!-- col-sm-3 col-xs-6 -->
+
+                </div>
+                <!-- row clearfix -->
+            </div>
+            <!-- container -->
+        </div>
+        <!-- menuFooter -->
+
+        <div class="footer clearfix">
+            <div class="container">
+                <div class="row clearfix">
+                    <div class="col-sm-6 col-xs-12 copyRight">
+                        <p>© 2016 Copyright KIDS PARADISE ENGLISH SCHOOL Developed <a href="#"></a></p>
+                    </div>
+                    <!-- col-sm-6 col-xs-12 -->
+                    <div class="col-sm-6 col-xs-12 privacy_policy">
+                        <a href="contact-us.html">Contact us</a>
+                        <a href="privacy-policy.html">Privacy Policy</a>
+                    </div>
+                    <!-- col-sm-6 col-xs-12 -->
+                </div>
+                <!-- row clearfix -->
+            </div>
+            <!-- container -->
+        </div>
+        <!-- footer -->
+	</div>
+
+	<!-- JQUERY SCRIPTS -->
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap/bootstrap.min.js"></script>
+  
+  <script src="js/plugins/navbar.js"></script>
+	
+	
+	 <script src="gallary.js"></script>
+	 <script src="js.js"></script> 
+</body>
+
+</html>
