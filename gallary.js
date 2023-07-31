@@ -68,7 +68,7 @@ function maker(json) {
     const keys1 = Object.keys(json);
         for (var i = 0; i < keys1.length; i++) {
             const counter = json[i];
-            console.log(i + ' - ' + counter.gallary_event + ' '+ counter.name + ' '+counter.destination + '' + counter.pic);
+            console.log(i + ' - ' + counter.gallary_event  + '' + counter.pic);
         }
 
     //const div = document.createElement('div');
@@ -78,7 +78,7 @@ function maker(json) {
     Object.keys(json).forEach(function(k){
         console.log(k + ' - ' + json[k]);
          newObject=json[k]
-         console.log("121" + ' - ' + newObject.gallary_event + ' '+newObject.name + ' '+newObject.destination  + '' + newObject.pic);
+         console.log("121" + ' - ' + newObject.gallary_event  + '' + newObject.pic);
          
 		 //console.log(nums.includes(8));
 		 if(!data.includes(newObject.gallary_event))
